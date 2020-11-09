@@ -1,0 +1,44 @@
+package auxiliares;
+
+import org.openqa.selenium.WebDriver;
+
+public class Evidencia {
+
+	
+	
+	
+	/**
+	 * @author Dvlopes - NouKz
+	 * @param path
+	 * @param ScreenshotName
+	 * @return 
+	 */
+	public static void takeScreen(String path, String ScreenshotName){
+		try{
+			String destinationPath = null;
+			WebDriver driver = WebDriver.getWebDriver();
+			File destFolder = new File(path);
+			destinationPath = destFolder.getCanonicalPath() + "//" + ScreenshotName + ".png";
+			TakesScreenshot screenshot = (TakesScreenshot) driver;
+			File sourceFile = screenshot.getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(sourceFile, new File(destinationPath));
+		} catch (Exception e){}
+	}
+
+	/**
+	 * @author Dvlopes - NouKz
+	 * @param valor
+	 * @return 
+	 * @return
+	 */
+	public static void porcentagemDeTela(int valor){
+		try{
+			WebDriver driver = DriverFactory.getWebDriver()
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("document.body.style.zoom = '"+valor+"%'");
+		}  catch (Exception e){
+			e
+		}
+	}
+	
+}

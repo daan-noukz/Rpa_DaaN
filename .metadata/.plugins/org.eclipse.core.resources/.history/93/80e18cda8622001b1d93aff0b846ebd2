@@ -1,0 +1,78 @@
+package frameWork;
+
+import java.io.File;
+import java.util.HashMap;
+
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+
+public class Driver {
+
+	
+	
+	
+	public static WebDriver driver;
+
+	/**
+	 * 
+	 */
+	public void iniciaChromeDrive(String url) {	
+		
+			
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dan\\eclipse-workspace\\Rpa_Dan\\Driver\\chromedriver.exe");
+		
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(retornaUrl(url));	
+	}
+
+	public String retornaUrl(String url) {
+		HashMap<String, String> urls = new HashMap<>();		
+		urls.put("google", "https://www.google.com");
+		urls.put("yahoo", "https://www.yahoo.com");		
+		urls.put("inmetrics", "http://www.inmrobo.tk/accounts/login/");	
+		System.out.println(urls.get(url.toString()));	
+		return urls.get(url.toString());		
+	}
+	
+	
+	
+	
+	public static void takeScreen(String path, String ScreenshotName){
+		try{
+			String destinationPath = null;
+			
+			File destFolder = new File(path);
+			destinationPath = destFolder.getCanonicalPath() + "//" + ScreenshotName + ".png";
+			TakesScreenshot screenshot = (TakesScreenshot) driver;
+			File sourceFile = screenshot.getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(sourceFile, new File(destinationPath));
+		} catch (Exception e){}
+	}
+
+	
+	
+	
+	/**
+	 * @author Dvlopes - NouKz
+	 * @param valor
+	 * @return 
+	 * @return
+	 */
+	public static void porcentagemDeTela(int valor){
+		try{
+			WebDriver driver = DriverFactory.getWebDriver()
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("document.body.style.zoom = '"+valor+"%'");
+		}  catch (Exception e){
+			e
+		}
+	}
+	
+	
+	
+	
+}

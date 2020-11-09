@@ -1,0 +1,20 @@
+package principal;
+
+import frameWork.Driver;
+import frameWork.FrameWork;
+import frameWork.ScreenShot;
+
+public class CasoTeste1 {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub			
+		
+		ScreenShot print = new ScreenShot();			
+		
+		
+		
+		print.printEvidencia("Chrome");
+		driver.finalizaChrome();		
+	
+	}
+}

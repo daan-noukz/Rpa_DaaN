@@ -1,0 +1,56 @@
+package frameWork;
+
+import java.awt.AWTException;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.annotation.Generated;
+import javax.imageio.ImageIO;
+
+import org.openqa.selenium.WebDriver;
+
+import auxiliares.Auxiliares;
+
+public class ScreenShot {
+
+	public static void printEvidencia(String name) {
+
+		try {
+			String caminhoEvidencia = "C:\\Users\\Public\\Evidencia";
+
+			boolean existenciaArquivo = Auxiliares.validaExistenciaDeArquivo(caminhoEvidencia);
+			if (existenciaArquivo == false) {
+				Rectangle captureSize = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+
+				java.awt.Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+				java.awt.Rectangle screenRectangle = new Rectangle(captureSize);
+				Robot robot = new Robot();
+				BufferedImage image = robot.createScreenCapture(screenRectangle);
+
+				File file = new File(caminhoEvidencia + "\\" + name + Auxiliares.data()+".jpg");
+				ImageIO.write(image, "png", file);
+				
+//				if (Auxiliares.validaExistenciaDeArquivo(caminhoEvidencia + "\\" + name + Auxiliares.data()+".jpg") == false) {
+//					ImageIO.write(image, "png", file);
+//				} else {
+//					Auxiliares.deleteFileDiretory(caminhoEvidencia + "\\" + name + Auxiliares.data()+".jpg");
+//					
+//				}
+
+			} else {
+				Auxiliares.createDiretory("Evidencia");
+				printEvidencia(name);
+			}
+		} catch (AWTException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

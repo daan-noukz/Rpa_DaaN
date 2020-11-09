@@ -1,0 +1,24 @@
+package testesInmetrics;
+
+import frameWork.Driver;
+import frameWork.FrameWork;
+import frameWork.ScreenShot;
+import inmetrics.InmetricsMetodos;
+
+public class CasoTesteLoginFail {
+	
+	public static void main(String[] args) {				
+		
+		InmetricsMetodos ct = new InmetricsMetodos();
+		
+		System.out.println("Dado que estou na pagina Inicial");
+		ct.abrirChrome();
+		System.out.println("E clico em Cadastrar");
+		ct.realizaLoginSemUsuario();
+		System.out.println("Então é apresentado Campo Obrigatorio");		
+		ct.recuperaValor();
+		System.out.println("E finalizo o Teste");	
+		ct.finaliza();
+	
+	}
+}

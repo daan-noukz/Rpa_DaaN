@@ -1,0 +1,30 @@
+package testeInmetrics;
+
+import frameWork.Driver;
+import frameWork.FrameWork;
+import principal.Iniciar;
+
+public class casoTesteInmetrics {
+	
+	//public static void iniciaDriver(){
+	public static Driver inicia = new Driver();
+	public static FrameWork driver = new FrameWork();		
+	//}
+	
+	public static void abrirChrome() {			
+		inicia.iniciaChromeDrive("inmetrics");			
+	} 
+	
+	public static void realizaLoginSemUsuario() {
+		driver.clicarElemento("//html/body/div/div[2]/div/form/div[6]/button");
+	} 
+	
+	
+	public static void recuperaValor() {
+		driver.recuperaValorAttribute("/html/body/div/div[2]/div/form/div[5]", "Text");
+	} 
+	
+	
+	
+
+}

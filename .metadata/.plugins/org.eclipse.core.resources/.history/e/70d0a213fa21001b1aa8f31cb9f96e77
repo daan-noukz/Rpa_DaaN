@@ -1,0 +1,22 @@
+package testeInmetrics;
+
+import frameWork.Driver;
+import frameWork.FrameWork;
+import frameWork.ScreenShot;
+
+public class CasoTeste1 {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub			
+		
+		ScreenShot print = new ScreenShot();			
+		
+		Driver inicia = new Driver();
+		FrameWork driver = new FrameWork();			
+		inicia.iniciaChromeDrive("inmetrics");			
+		
+		print.printEvidencia("Chrome");
+		driver.finalizaChrome();		
+	
+	}
+}

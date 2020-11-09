@@ -1,0 +1,10 @@
+package testeInmetrics;
+
+public class casoTesteInmetrics {
+	
+	
+	public static login() {
+		
+	} 
+
+}

@@ -1,0 +1,24 @@
+package testesInmetrics;
+
+import frameWork.Driver;
+import frameWork.FrameWork;
+import frameWork.ScreenShot;
+import inmetrics.InmetricsMetodos;
+
+public class CtTelaCadastro {
+
+	public static void main(String[] args) {
+
+		InmetricsMetodos ct = new InmetricsMetodos();
+		ct.massaDadosSet();
+
+		System.out.println("Dado que estou na pagina Inicial");
+		ct.abrirChrome();
+		System.out.println("E clico em Cadastre-se");
+		ct.clicoCadastreSe();
+		System.out.println("Então é apresentado a tela de cadastro");
+		ct.validaTelaCadastro();
+		System.out.println("E finalizo o Teste");	
+		ct.finaliza();
+	}
+}

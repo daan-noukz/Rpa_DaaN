@@ -1,0 +1,52 @@
+package inmetrics;
+
+import frameWork.Driver;
+import frameWork.FrameWork;
+import frameWork.ScreenShot;
+import principal.Iniciar;
+
+public class InmetricsMetodos {
+	
+	//public static void iniciaDriver(){
+	public static Driver inicia = new Driver();
+	public static FrameWork driver = new FrameWork();		
+	public static ScreenShot print = new ScreenShot();	
+	//}
+	
+	public static void abrirChrome() {			
+		inicia.iniciaChromeDrive("inmetrics");			
+	} 
+	
+	public static void finaliza() {			
+		driver.finalizaChrome();		
+	} 
+	
+	public static void realizaLoginSemUsuario() {
+		driver.clicarElemento("//html/body/div/div[2]/div/form/div[6]/button");
+	} 	
+	
+	public static void recuperaValor() {
+	String valor = driver.recuperaValorAttribute("/html/body/div/div[2]/div/form/div[3]/input", "text");
+	print.printEvidencia(valor);
+	} 
+	
+	
+	public static void clicoCadastreSe() {		
+		driver.clicarElemento("//*[@id='navbarSupportedContent']/ul/li[1]");
+	}
+	
+	public static void validaTelaCadastro() {
+		String valor = driver.recuperaValorAttribute("/html/body/div/div/div/form/span", "textContent");
+		valor = valor.replace(" ", "").trim();
+		print.printEvidencia(valor);
+		} 
+	
+	public static void preenchoCamposUsuarioSenhaCadastro() {
+		
+		} 
+	
+	
+	
+	
+
+}

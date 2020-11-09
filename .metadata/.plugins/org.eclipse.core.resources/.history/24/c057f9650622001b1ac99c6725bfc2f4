@@ -1,0 +1,91 @@
+package inmetrics;
+
+import frameWork.Driver;
+import frameWork.FrameWork;
+import frameWork.ScreenShot;
+import principal.Iniciar;
+
+public class InmetricsMetodos {
+
+	// public static void iniciaDriver(){
+	public static Driver inicia = new Driver();
+	public static FrameWork driver = new FrameWork();
+	public static ScreenShot print = new ScreenShot();
+	// }
+
+	public static void abrirChrome() {
+		inicia.iniciaChromeDrive("inmetrics");
+	}
+
+	public static void finaliza() {
+		driver.finalizaChrome();
+	}
+
+	public static void realizaLoginSemUsuario() {
+		driver.clicarElemento("//html/body/div/div[2]/div/form/div[6]/button");
+	}
+
+	public static void recuperaValor() {
+		String valor = driver.recuperaValorAttribute("/html/body/div/div[2]/div/form/div[3]/input", "text");
+		print.printEvidencia(valor);
+	}
+
+	public static void clicoCadastreSe() {
+		driver.clicarElemento("//*[@id='navbarSupportedContent']/ul/li[1]");
+	}
+
+	public static void validaTelaCadastro() {
+		
+		String valor = driver.recuperaValorAttribute("/html/body/div/div/div/form/span", "textContent");
+		valor = valor.replace(" ", "").trim();
+		if (valor.equals("Cadastre-se")) {
+			System.out.println(valor);
+			print.printEvidencia(valor);
+		} else {
+			System.err.println("Erro ao Validar tela Cadastro");
+			print.printEvidencia("Erro ao Validar tela Cadastro");
+			driver.finalizaChrome();
+		}
+
+	}
+
+	public static void preenchoCamposUsuarioSenhaCadastro() {
+		driver.preencheCampo("/html/body/div/div/div/form/div[2]/input", "TESTE");
+		driver.preencheCampo("/html/body/div/div/div/form/div[4]/input", "TESTE1234");
+		driver.preencheCampo("/html/body/div/div/div/form/div[6]/input", "TESTE1234");
+
+	}
+
+	public static void clicoBotaoCadastrar() {
+		driver.clicarElemento("/html/body/div/div/div/form/div[7]/button");
+	}
+
+	public static void validaTelaLogin() {
+		String valor = driver.recuperaValorAttribute("//html/body/div/div[2]/div/form/span", "textContent");
+		valor = valor.replace(" ", "").trim();
+
+		if (valor.equals("Login")) {
+			System.out.println(valor);
+			print.printEvidencia(valor);
+		} else {
+			System.err.println("Erro ao Validar tela Cadastro");
+			print.printEvidencia("Erro ao Validar tela Cadastro");
+			driver.finalizaChrome();
+		}
+	}
+	
+	public static void validaUsuarioCadastrado() {
+		String valor = driver.recuperaValorAttribute("//html/body/div/div[2]/div/form/span", "textContent");
+		valor = valor.replace(" ", "").trim();
+
+		if (valor.equals("Login")) {
+			System.out.println(valor);
+			print.printEvidencia(valor);
+		} else {
+			System.err.println("Erro ao Validar tela Cadastro");
+			print.printEvidencia("Erro ao Validar tela Cadastro");
+			driver.finalizaChrome();
+		}
+	}
+
+}

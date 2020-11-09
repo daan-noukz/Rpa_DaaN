@@ -1,0 +1,30 @@
+package principal;
+
+import frameWork.Driver;
+import frameWork.FrameWork;
+import frameWork.ScreenShot;
+import testeInmetrics.casoTesteInmetrics;
+
+public class CasoTeste1 {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub			
+		
+		ScreenShot print = new ScreenShot();			
+		
+		casoTesteInmetrics ct = new casoTesteInmetrics();
+		
+		System.out.println("Dado que estou na pagina Inicial");
+		ct.abrirChrome();
+		System.out.println("E tento realizar login sem preencher campos usuario e senha");
+		ct.realizaLoginSemUsuario();
+		System.out.println("Então é apresentado Campo Obrigatorio");
+		
+		ct.recuperaValor();
+		
+		
+		print.printEvidencia("Chrome");
+	//	driver.finalizaChrome();		
+	
+	}
+}

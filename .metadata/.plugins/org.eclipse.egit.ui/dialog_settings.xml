@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="EGit.KnownHosts">
+		<item value="bitbucket.org"/>
+		<item value="github.com"/>
+		<item value="git.eclipse.org"/>
+		<item value="gitlab.inlabs.app"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://desafio_qa_2020:JFHSpWGg_WNP5snnFqcE@gitlab.inlabs.app/desafio-inmetrics/Java.git"/>
+		<item value="http://www.inmrobo.tk/accounts/login/"/>
+	</list>
+</section>

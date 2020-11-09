@@ -1,0 +1,12 @@
+package massaDados;
+
+public class MassaDadosInmetrics {
+
+	private String usuario;
+	private String senha;
+	private String usuarioDuplicado;
+	private String senhaDuplicado;
+	
+	
+	
+}

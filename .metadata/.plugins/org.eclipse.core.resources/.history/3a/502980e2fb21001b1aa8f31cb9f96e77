@@ -1,0 +1,25 @@
+package testeInmetrics;
+
+import frameWork.Driver;
+import frameWork.FrameWork;
+import principal.Iniciar;
+
+public class casoTesteInmetrics {
+	
+	//public static void iniciaDriver(){
+	public static Driver inicia = new Driver();
+	public FrameWork driver = new FrameWork();		
+	//}
+	
+	public static void abrirChrome() {			
+		inicia.iniciaChromeDrive("inmetrics");			
+	} 
+	
+	public static void login() {
+		driver.clicarElemento("//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input");
+	} 
+	
+	
+	///html/body/div/div[2]/div/form/div[6]/button
+
+}

@@ -1,0 +1,51 @@
+package principal;
+
+import java.awt.List;
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+
+import massaDados.Massa;
+import frameWork.Driver;
+import frameWork.FrameWork;
+import frameWork.ScreenShot;
+import leitorExcel.LeitorExcel;
+import leitorExcel.TipoLeitorExcel;
+
+public class Iniciar {
+
+	
+
+	public static ArrayList<Massa> listaExcel2;
+	public static String caminhoExcel = "C:\\Users\\Public\\teste123.xlsx";
+	
+	public static void main(String[] args) throws IOException, EncryptedDocumentException, InvalidFormatException {			
+		
+	ScreenShot print = new ScreenShot();			
+		
+		Driver inicia = new Driver();
+		FrameWork driver = new FrameWork();			
+		inicia.iniciaChromeDrive("google");			
+		driver.clicarElemento("//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input");
+		driver.preencheCampo("//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input", "java");
+		driver.enviaEnter("//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input");
+		print.printEvidencia("Chrome");
+		driver.finalizaChrome();	
+		
+	}
+
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+}

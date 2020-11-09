@@ -1,0 +1,26 @@
+package testeInmetrics;
+
+import frameWork.Driver;
+import frameWork.FrameWork;
+
+public class casoTesteInmetrics {
+	
+	public static void iniciaDriver():{
+	Driver inicia = new Driver();
+	FrameWork driver = new FrameWork();		
+	}
+	
+	public static void abrirChrome() {			
+		inicia.iniciaChromeDrive("inmetrics");			
+	} 
+	
+	public static void login() {
+		Driver inicia = new Driver();
+		FrameWork driver = new FrameWork();			
+		inicia.iniciaChromeDrive("inmetrics");			
+	} 
+	
+	
+	///html/body/div/div[2]/div/form/div[6]/button
+
+}
